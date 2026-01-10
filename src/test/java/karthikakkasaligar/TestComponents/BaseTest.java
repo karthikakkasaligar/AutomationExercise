@@ -51,6 +51,7 @@ public class BaseTest {
 	public HomePage launchApplication() throws IOException {
 		driver = intializedriver();
 		homepage = new HomePage(driver, wait);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		homepage.GoTo();
 		return homepage;
 	}

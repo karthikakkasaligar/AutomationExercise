@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import karthikakkasaligar.PageObjectModel.ContactUsPage;
 import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
 
@@ -49,7 +50,7 @@ public class ReUseableComponentsPage {
 	@FindBy(xpath=("//*[text()='Karthik']"))
 	WebElement name;
 	
-	////	driver.findElement(By.cssSelector("")).click();
+	
 	 @FindBy(css="[href='/delete_account']")
 	 WebElement deleteaccount;
 	 
@@ -79,6 +80,17 @@ public class ReUseableComponentsPage {
 	public void logout()
 	{
 		Logout.click();
+	}
+	
+	
+	@FindBy(css="[href='/contact_us']")
+	WebElement contactus;
+	
+	public ContactUsPage contactus()
+	{
+		contactus.click();
+		ContactUsPage contactuspage=new ContactUsPage(driver, wait);
+		return contactuspage;
 	}
 	
 
