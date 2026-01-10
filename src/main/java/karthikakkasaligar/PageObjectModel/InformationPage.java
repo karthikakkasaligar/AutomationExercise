@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import karthik.ReuseAbleComponentsPage.ReUseableComponentsPage;
+import karthikakkasaligar.ReuseAbleComponentsPage.ReUseableComponentsPage;
 
 public class InformationPage extends ReUseableComponentsPage{
 	

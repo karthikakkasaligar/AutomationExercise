@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import karthik.ReuseAbleComponentsPage.ReUseableComponentsPage;
+import karthikakkasaligar.ReuseAbleComponentsPage.ReUseableComponentsPage;
 
 public class DeletionConfirmationPage extends ReUseableComponentsPage {
 	
