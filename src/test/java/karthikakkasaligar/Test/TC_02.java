@@ -4,7 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import karthikakkasaligar.PageObjectModel.AccountCreationConfirmationPage;
 import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
+import karthikakkasaligar.PageObjectModel.InformationPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
 import karthikakkasaligar.TestComponents.BaseTest;
 
@@ -22,14 +24,44 @@ import karthikakkasaligar.TestComponents.BaseTest;
 
 public class TC_02 extends BaseTest {
 
-	@Test(dataProvider = "getdata")
-	public void LoginUserwithcorrectemailandpassword(String email1, String password1) {
+	String newemail;
+	String Password ="Test@123";
+	
+	@Test
+	public void createnewaccount()
+	{
+		SignUPorLoginPage signuporloginpage = homepage.Header.SignUporLogin();
+		String usersignuptext = signuporloginpage.GetSignuptext();
+		Assert.assertEquals("New User Signup!", usersignuptext);
+		
+		newemail ="karthik"+System.currentTimeMillis() +"@yopmail.com";
+		InformationPage informationpage = signuporloginpage.SignUp("Karthik",newemail);
+				
+		// Information Page
+		String accountinfotext = informationpage.getaccountinfotext();
+		Assert.assertTrue(accountinfotext.equalsIgnoreCase("Enter Account Information"),"Account information Text is Mismatched");
+		AccountCreationConfirmationPage accountcreationconfirmationpage = informationpage.informationinfo("Test@123","Karthik", "Akkasaligar", "Product Based company", "#78, Beverly hills", "Karnataka", "Hubli", "969658","9590188891");
+				
+		// Account Creation Page
+		accountcreationconfirmationpage.verifyAccountCreated();
+		accountcreationconfirmationpage.clickContinue();
+
+		// LoginConfirmationPage
+		homepage.Header.loginconfirmation();
+		homepage.Header.logout();
+		
+	}
+	
+	
+	
+	@Test(dependsOnMethods = "createnewaccount")
+	public void LoginUserwithcorrectemailandpassword() {
 
 		// Login/SignUpPage
 		SignUPorLoginPage signuporloginpage = homepage.Header.SignUporLogin();
 		String LoginText = signuporloginpage.getlogintext();
 		Assert.assertEquals("Login to your account", LoginText);
-		signuporloginpage.login(email1,password1);
+		signuporloginpage.login(newemail,Password);
 
 		// LoginConfirmationPage
 		homepage.Header.loginconfirmation();
@@ -39,10 +71,7 @@ public class TC_02 extends BaseTest {
 		deletionconfirmationPage.Deleteconfirmation();
 	}
 	
-	@DataProvider
-	public Object[][] getdata() {
-	return new	Object[][] {{"901karthik@yopmail.com" ,"karthik123"}};
-	}
+	
 	
 
 } 
