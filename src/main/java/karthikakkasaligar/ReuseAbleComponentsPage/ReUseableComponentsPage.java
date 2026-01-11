@@ -14,6 +14,7 @@ import org.testng.Assert;
 import karthikakkasaligar.PageObjectModel.ContactUsPage;
 import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
+import karthikakkasaligar.PageObjectModel.TestCasePage;
 
 public class ReUseableComponentsPage {
 	
@@ -91,6 +92,17 @@ public class ReUseableComponentsPage {
 		contactus.click();
 		ContactUsPage contactuspage=new ContactUsPage(driver, wait);
 		return contactuspage;
+	}
+	
+	//driver.findElement(By.cssSelector("")).click();
+	@FindBy(css="[href='/test_cases']")
+	WebElement TestCaseButton;
+	
+	public TestCasePage clickTestCaseButton()
+	{
+		TestCaseButton.click();
+		TestCasePage testcasepage=new TestCasePage(driver,wait);
+		return testcasepage;
 	}
 	
 

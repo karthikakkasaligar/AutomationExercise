@@ -5,10 +5,11 @@
     <classes>
       <class name="karthikakkasaligar.Test.TC_01"/>
       <class name="karthikakkasaligar.Test.TC_02"/>
-      <class name="karthikakkasaligar.Test.TC_05"/>
-      <class name="karthikakkasaligar.Test.TC_06"/>
       <class name="karthikakkasaligar.Test.TC_03"/>
       <class name="karthikakkasaligar.Test.TC_04"/>
+      <class name="karthikakkasaligar.Test.TC_05"/>
+      <class name="karthikakkasaligar.Test.TC_06"/>
+      <class name="karthikakkasaligar.Test.TC_07"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

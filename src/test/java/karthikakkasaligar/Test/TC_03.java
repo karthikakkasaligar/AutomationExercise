@@ -21,6 +21,6 @@ public class TC_03 extends BaseTest{
 	@DataProvider
 	public Object[][] getdata()
 	{
-	return	new Object[][] {{"karthik77@gmail.com","Test@321"}};
+	return	new Object[][] {{"Test123321@gmail.com","karthik123"}};
 	}
 }
