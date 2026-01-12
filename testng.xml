@@ -9,7 +9,8 @@
       <class name="karthikakkasaligar.Test.TC_04"/>
       <class name="karthikakkasaligar.Test.TC_05"/>
       <class name="karthikakkasaligar.Test.TC_06"/>
-      <class name="karthikakkasaligar.Test.TC_07"></class>
+      <class name="karthikakkasaligar.Test.TC_07"/>
+      <class name="karthikakkasaligar.Test.TC_08"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

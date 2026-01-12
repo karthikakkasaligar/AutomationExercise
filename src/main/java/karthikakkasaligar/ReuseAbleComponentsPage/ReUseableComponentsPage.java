@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import karthikakkasaligar.PageObjectModel.AllProductsPage;
 import karthikakkasaligar.PageObjectModel.ContactUsPage;
 import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
@@ -105,6 +106,16 @@ public class ReUseableComponentsPage {
 		return testcasepage;
 	}
 	
+	//driver.findElement(By.cssSelector("")).click();
+	@FindBy(css="[href='/products']")
+	WebElement Productsbutton;
+	
+	public AllProductsPage productsbuttonclick()
+	{
+		Productsbutton.click();
+		AllProductsPage allproductspage=new AllProductsPage(driver,wait);
+		return allproductspage;
+	}
 
 
 	
