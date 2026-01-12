@@ -12,8 +12,8 @@ public class TC_07 extends BaseTest {
 	@Test
 	public void VerifyTestCasePage() {
 		SignUPorLoginPage signuporloginpage = homepage.Header.SignUporLogin();
-		TestCasePage testcasepage=homepage.Header.clickTestCaseButton();
-		String URL= testcasepage.getcurrenyurl();
+		TestCasePage testcasepage = homepage.Header.clickTestCaseButton();
+		String URL = testcasepage.getcurrenturl();
 		Assert.assertEquals(URL, "https://automationexercise.com/test_cases");
 	}
 

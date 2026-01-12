@@ -16,7 +16,7 @@ public class TestCasePage extends ReUseableComponentsPage{
 		PageFactory.initElements(driver, this);
 		
 	}
-	public String getcurrenyurl()
+	public String getcurrenturl()
 	{ 
 		return driver.getCurrentUrl();
 	}
