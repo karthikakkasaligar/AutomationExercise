@@ -68,6 +68,10 @@ public class ProductsDetailsPage extends ReUseableComponentsPage{
 	  return Brand.isDisplayed();
 	}
 	
+	public String getproductname()
+	{
+	  return ProductName.getText().trim();
+	}
 	
 }
 

@@ -1,0 +1,38 @@
+package karthikakkasaligar.Test;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import karthikakkasaligar.PageObjectModel.AllProductsPage;
+import karthikakkasaligar.PageObjectModel.ProductsDetailsPage;
+import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
+import karthikakkasaligar.TestComponents.BaseTest;
+
+public class TC_09 extends BaseTest {
+
+	@Test(dataProvider = "getdata")
+	public void SearchProduct(String productname)
+	{
+		SignUPorLoginPage signuporloginpage = homepage.Header.SignUporLogin();
+		AllProductsPage allproductspage = homepage.Header.productsbuttonclick();
+
+		// ALL Products Page
+		String allproductstext = allproductspage.getallproductstext();
+		Assert.assertTrue(allproductstext.equalsIgnoreCase(allproductstext), "text mismatching");
+		driver.findElement(By.id("search_product")).sendKeys(productname);
+		driver.findElement(By.id("submit_search")).click();
+		allproductspage.scrolldown();
+		ProductsDetailsPage productsdetailspage = allproductspage.clickviewproduct();
+		 String Productname= productsdetailspage.getproductname();
+	    Assert.assertEquals(Productname, productname);
+	}
+	
+	@DataProvider
+	public  Object[][]  getdata() 
+	{
+		return new Object[][] {{"Rust Red Linen Saree"}};
+	}
+
+}
