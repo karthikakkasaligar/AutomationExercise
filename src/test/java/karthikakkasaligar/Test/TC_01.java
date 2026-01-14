@@ -63,7 +63,7 @@ public class TC_01 extends BaseTest {
 	}
 	
 	@DataProvider
-	public Object getdata()
+	public Object[][] getdata()
 	{	
 		return new Object[][] {{"Karthik","karthik"+System.currentTimeMillis() +"@yopmail.com"}};
 	}
