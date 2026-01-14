@@ -22,7 +22,7 @@ public class HomePage extends ReUseableComponentsPage{
 	
 	public void  GoTo() 
 	{
-		driver.get("https://automationexercise.com/");
+		driver.get("https://automationexercise.com");
 		
 	}
 
