@@ -12,6 +12,7 @@
       <class name="karthikakkasaligar.Test.TC_07"/>
       <class name="karthikakkasaligar.Test.TC_08"/>
       <class name="karthikakkasaligar.Test.TC_09"/>
+      <class name="karthikakkasaligar.Test.TC_10"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

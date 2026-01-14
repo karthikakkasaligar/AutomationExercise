@@ -2,6 +2,7 @@ package karthikakkasaligar.ReuseAbleComponentsPage;
 
 import java.time.Duration;
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,6 +32,15 @@ public class ReUseableComponentsPage {
 	
 	@FindBy(css="[href='/login']")
 	WebElement SignUporLogin;
+	
+	@FindBy(xpath="(//a[@href='/'])[2]")
+	WebElement Homepage;
+	
+	public SignUPorLoginPage clickonhomepage()
+	{
+		Homepage.click();
+		return null;
+	}
 	
 	
 	public SignUPorLoginPage SignUporLogin() 
@@ -116,8 +126,30 @@ public class ReUseableComponentsPage {
 		AllProductsPage allproductspage=new AllProductsPage(driver,wait);
 		return allproductspage;
 	}
-
-
 	
+	public String gethomepageurl()
+	{
+	  return driver.getCurrentUrl();
+	}
+
+	@FindBy(id="susbscribe_email")
+	WebElement susbscribeemail;
+	
+	@FindBy(id="subscribe")
+	WebElement subscribeCTA;
+	
+	@FindBy(id="success-subscribe")
+	WebElement successsubscribemsg;
+	
+	public void VerifySubscription(String email)
+	{
+		susbscribeemail.sendKeys(email);
+		subscribeCTA.click();
+	}
+	
+	public String VerifySubscriptionmsg()
+	{
+	  return successsubscribemsg.getText().trim();
+	}
 
 }
