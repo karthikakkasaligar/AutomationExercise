@@ -42,6 +42,15 @@ public class ReUseableComponentsPage {
 		return null;
 	}
 	
+	@FindBy(css="[href='/products']")
+	WebElement productsclick;
+	
+	public void clickonproducts()
+	{
+		productsclick.click();
+		
+	}
+	
 	
 	public SignUPorLoginPage SignUporLogin() 
 	{
