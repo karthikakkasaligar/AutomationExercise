@@ -50,7 +50,7 @@ public class ProductsPage extends ReUseableComponentsPage {
    public void scrolldown()
    {
 	   JavascriptExecutor js = (JavascriptExecutor) driver;
-	   js.executeScript("window.scrollBy(0,600);");
+	   js.executeScript("window.scrollBy(0,500);");
    }
    
    @FindBy(css="[class*='nav-justified']")
@@ -66,6 +66,7 @@ public class ProductsPage extends ReUseableComponentsPage {
    public void refreshpage()
    {
 	   driver.navigate().refresh();
+	   
    }
    
    
@@ -100,46 +101,32 @@ public class ProductsPage extends ReUseableComponentsPage {
    @FindBy(css=".cart_price")
    List<WebElement> cartproductsprice;
    
-   public String firstproductprice() {
-	  return cartproductsprice.get(0).getText().trim();
+   public String getproductprice(int index) {
+	  return cartproductsprice.get(index).getText().trim();
    }
    
-   public String secondproductprice() {
-	 return  cartproductsprice.get(1).getText().trim();
-   }
-   
-   @FindBy(css=".cart_description")
+   @FindBy(css="[class='cart_description'] a")
    List<WebElement> productprice;
    
-   public String firstproductverification() {
-	return  productprice.get(0).getText().trim();
+   public String getproductverification(int index) {
+	return  productprice.get(index).getText().trim();
    }
-   
-   public String secondproductverification() {
-	   return  productprice.get(1).getText().trim();
-   }
-   
+      
    @FindBy(css=".cart_quantity")
    List<WebElement> productquantity;
    
-   public String firstproductquantity() {
-	  return   productquantity.get(0).getText().trim();
+   public String getproductquantity(int index) {
+	  return   productquantity.get(index).getText().trim();
    }
    
-   public String secondproductquantity() {
-		  return   productquantity.get(1).getText().trim();
-	   }
    
    @FindBy(css=".cart_total")
    List<WebElement> totalprice;
    
-   public String firstproducttotalprice() {
-	 return  totalprice.get(0).getText().trim();
+   public String getproducttotalprice(int index) {
+	 return  totalprice.get(index).getText().trim();
    }
    
-   public String secondproducttotalprice() {
-		 return  totalprice.get(1).getText().trim();
-	   }
    
   
 }
