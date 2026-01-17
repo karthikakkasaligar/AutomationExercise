@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import karthikakkasaligar.PageObjectModel.AllProductsPage;
+import karthikakkasaligar.PageObjectModel.ProductsPage;
 import karthikakkasaligar.PageObjectModel.ContactUsPage;
 import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
@@ -129,10 +129,10 @@ public class ReUseableComponentsPage {
 	@FindBy(css="[href='/products']")
 	WebElement Productsbutton;
 	
-	public AllProductsPage productsbuttonclick()
+	public ProductsPage productsbuttonclick()
 	{
 		Productsbutton.click();
-		AllProductsPage allproductspage=new AllProductsPage(driver,wait);
+		ProductsPage allproductspage=new ProductsPage(driver,wait);
 		return allproductspage;
 	}
 	

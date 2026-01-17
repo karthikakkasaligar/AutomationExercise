@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import karthikakkasaligar.PageObjectModel.AllProductsPage;
+import karthikakkasaligar.PageObjectModel.ProductsPage;
 import karthikakkasaligar.PageObjectModel.ProductsDetailsPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
 import karthikakkasaligar.TestComponents.BaseTest;
@@ -16,15 +16,17 @@ public class TC_09 extends BaseTest {
 	public void SearchProduct(String productname)
 	{
 		SignUPorLoginPage signuporloginpage = homepage.Header.SignUporLogin();
-		AllProductsPage allproductspage = homepage.Header.productsbuttonclick();
+		ProductsPage productspage = homepage.Header.productsbuttonclick();
+		productspage.scrolldown();
+		
 
 		// ALL Products Page
-		String allproductstext = allproductspage.getallproductstext();
+		String allproductstext = productspage.getallproductstext();
 		Assert.assertTrue(allproductstext.equalsIgnoreCase(allproductstext), "text mismatching");
 		driver.findElement(By.id("search_product")).sendKeys(productname);
 		driver.findElement(By.id("submit_search")).click();
-		allproductspage.scrolldown();
-		ProductsDetailsPage productsdetailspage = allproductspage.clickviewproduct();
+		productspage.scrolldown();
+		ProductsDetailsPage productsdetailspage = productspage.clickviewproduct();
 		 String Productname= productsdetailspage.getproductname();
 	    Assert.assertEquals(Productname, productname);
 	}

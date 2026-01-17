@@ -3,7 +3,7 @@ package karthikakkasaligar.Test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import karthikakkasaligar.PageObjectModel.AllProductsPage;
+import karthikakkasaligar.PageObjectModel.ProductsPage;
 import karthikakkasaligar.PageObjectModel.ProductsDetailsPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
 import karthikakkasaligar.TestComponents.BaseTest;
@@ -14,7 +14,7 @@ public class TC_08 extends BaseTest {
 	public void VerifyAllProductsandproductdetailpage() {
 
 		SignUPorLoginPage signuporloginpage = homepage.Header.SignUporLogin();
-		AllProductsPage allproductspage = homepage.Header.productsbuttonclick();
+		ProductsPage allproductspage = homepage.Header.productsbuttonclick();
 
 		// ALL Products Page
 		String allproductstext = allproductspage.getallproductstext();
