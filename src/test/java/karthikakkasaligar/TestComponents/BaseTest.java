@@ -34,7 +34,7 @@ public class BaseTest {
 		{
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--incognito");
-			driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 		}
 		else if (browsername.equalsIgnoreCase("firefox"))
 		{
