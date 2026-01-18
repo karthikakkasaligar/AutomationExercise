@@ -90,42 +90,17 @@ public class ProductsPage extends ReUseableComponentsPage {
 	     
    }
    
-   public void secondproductselection() {
+   public CartPage secondproductselection() {
 	   WebElement product2= productstoadd.get(1);
 	   action.moveToElement(product2).build().perform();  
 	   WebElement addtocart1=product2.findElement(By.cssSelector("[class*='add-to-cart']"));
 	   action.moveToElement(addtocart1).click().build().perform();
 	   viewcart.click();
+	   CartPage cartpage = new CartPage(driver, wait);
+	   return cartpage;
    }
    
-   @FindBy(css=".cart_price")
-   List<WebElement> cartproductsprice;
-   
-   public String getproductprice(int index) {
-	  return cartproductsprice.get(index).getText().trim();
-   }
-   
-   @FindBy(css="[class='cart_description'] a")
-   List<WebElement> productprice;
-   
-   public String getproductverification(int index) {
-	return  productprice.get(index).getText().trim();
-   }
-      
-   @FindBy(css=".cart_quantity")
-   List<WebElement> productquantity;
-   
-   public String getproductquantity(int index) {
-	  return   productquantity.get(index).getText().trim();
-   }
-   
-   
-   @FindBy(css=".cart_total")
-   List<WebElement> totalprice;
-   
-   public String getproducttotalprice(int index) {
-	 return  totalprice.get(index).getText().trim();
-   }
+  
    
    
   

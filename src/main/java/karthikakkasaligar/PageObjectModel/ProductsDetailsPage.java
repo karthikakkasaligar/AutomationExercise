@@ -2,6 +2,7 @@ package karthikakkasaligar.PageObjectModel;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -72,6 +73,26 @@ public class ProductsDetailsPage extends ReUseableComponentsPage{
 	{
 	  return ProductName.getText().trim();
 	}
+	
+
+	@FindBy(id="quantity")
+	WebElement qantity;
+	
+	@FindBy(css=".btn.btn-default.cart")
+	WebElement addtocart;
+	
+	@FindBy(xpath="(//a[@href='/view_cart'])[2]")
+	WebElement viewcart;
+	
+	public CartPage changequantity(String Quantity) {
+		qantity.clear();
+		qantity.sendKeys(Quantity);
+		addtocart.click();
+		viewcart.click();
+		CartPage cartpage = new CartPage(driver, wait);
+		return cartpage;
+	}
+	
 	
 }
 
