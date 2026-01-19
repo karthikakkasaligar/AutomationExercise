@@ -47,18 +47,20 @@ public class BaseTest {
 		return driver;
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public HomePage launchApplication() throws IOException {
 		driver = intializedriver();
-		homepage = new HomePage(driver, wait);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		homepage = new HomePage(driver, wait);
 		homepage.GoTo();
 		return homepage;
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void closeapplication() {
+		if(driver!=null) {
 		driver.quit();
+		}
 	}
 
 }

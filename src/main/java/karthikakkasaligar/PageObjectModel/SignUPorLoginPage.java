@@ -91,7 +91,6 @@ public class SignUPorLoginPage extends ReUseableComponentsPage{
 	  return	errorext.getText().trim();
 	}
 	
-	//String EmailText= driver.findElement(By.cssSelector("")).getText().trim();
 	
 	@FindBy(css="[action='/signup'] p")
 	WebElement EmailText;
