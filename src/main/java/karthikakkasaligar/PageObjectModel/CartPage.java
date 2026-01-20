@@ -3,6 +3,7 @@ package karthikakkasaligar.PageObjectModel;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ import karthikakkasaligar.ReuseAbleComponentsPage.ReUseableComponentsPage;
 public class CartPage extends ReUseableComponentsPage {
 	
 	WebDriver driver;
+	WebDriverWait wait;
 	public CartPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		this.driver=driver;
@@ -41,13 +43,32 @@ public class CartPage extends ReUseableComponentsPage {
 	   public String getproductquantity(int index) {
 		  return   productquantity.get(index).getText().trim();
 	   }
-	   
-	   
+	     
 	   @FindBy(css=".cart_total")
 	   List<WebElement> totalprice;
 	   
 	   public String getproducttotalprice(int index) {
 		 return  totalprice.get(index).getText().trim();
+	   }
+	
+	   @FindBy(css="[class*='check_out']")
+	   WebElement cartcheckout;
+	   
+	   public checkoutpage clickoncartcheckout() {
+		   cartcheckout.click(); 
+		   checkoutpage checkout=new checkoutpage(driver, wait);
+		   return checkout;
+	   }
+	   
+	   @FindBy(xpath="(//a[@href='/login'])[2]")
+	   WebElement registerorlogin;
+	   
+	   public void clickonregisterorlogin() {
+		   registerorlogin.click();
+	   }
+	  
+	   public void checkoutt() {
+		   cartcheckout.click();
 	   }
 	
 

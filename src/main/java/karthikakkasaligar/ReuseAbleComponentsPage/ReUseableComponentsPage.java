@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import karthikakkasaligar.PageObjectModel.ProductsPage;
+import karthikakkasaligar.PageObjectModel.CartPage;
 import karthikakkasaligar.PageObjectModel.ContactUsPage;
 import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
@@ -159,6 +161,20 @@ public class ReUseableComponentsPage {
 	public String VerifySubscriptionmsg()
 	{
 	  return successsubscribemsg.getText().trim();
+	}
+	
+	@FindBy(css="[href='/view_cart']")
+	WebElement headercarticon;
+	
+	public void clickheadercarticon()
+	{
+		headercarticon.click();
+		
+	}
+	
+	public void scrolldown() {
+		JavascriptExecutor js =(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,300);");
 	}
 
 }
