@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import karthikakkasaligar.PageObjectModel.AccountCreationConfirmationPage;
 import karthikakkasaligar.PageObjectModel.CartPage;
 import karthikakkasaligar.PageObjectModel.InformationPage;
+import karthikakkasaligar.PageObjectModel.PaymentsDonePage;
 import karthikakkasaligar.PageObjectModel.ProductsPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
 import karthikakkasaligar.PageObjectModel.checkoutpage;
@@ -68,8 +69,8 @@ public class TC_13 extends BaseTest {
 
 		// payment page
 		homepage.Header.scrolldown();
-		payments.getcardetails("karthik", "123456789", "123", "jan", "1997");
-		Assert.assertEquals(payments.getsuccessmessage(), "Your order has been placed successfully!");
+		PaymentsDonePage PaymentsDone =  payments.getcardetails("karthik", "123456789", "123", "jan", "1997");
+		Assert.assertEquals(PaymentsDone.orderplacedconfirmation(), "ORDER PLACED!");
 
 	}
 

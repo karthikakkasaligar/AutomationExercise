@@ -25,24 +25,18 @@ public class paymentpage extends ReUseableComponentsPage {
 	
 	@FindBy(css=".form-control")
 	List<WebElement> cardetails;
-	
-	//By waitformessage=By.className("alert-success alert");
-	
-	@FindBy(css= "alert-success.alert")
-	WebElement message;
-	
-	public void getcardetails(String name, String cardnumber, String cvc, String expiry, String year) {
+
+	public PaymentsDonePage getcardetails(String name, String cardnumber, String cvc, String expiry, String year) {
 		cardetails.get(0).sendKeys(name);
 		cardetails.get(1).sendKeys(cardnumber);
 		cardetails.get(2).sendKeys(cvc);
 		cardetails.get(3).sendKeys(expiry);
 		cardetails.get(4).sendKeys(year);
 		cardetails.get(5).click();
+		PaymentsDonePage PaymentsDone = new PaymentsDonePage(driver, wait);
+		return PaymentsDone;
 	}
 	
-	public String getsuccessmessage() {
-	// waitforwebelementtoappear(waitformessage);
-	  return message.getText().trim();
-	}
+	
 
 }
