@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import karthikakkasaligar.PageObjectModel.AccountCreationConfirmationPage;
 import karthikakkasaligar.PageObjectModel.CartPage;
+import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
 import karthikakkasaligar.PageObjectModel.InformationPage;
 import karthikakkasaligar.PageObjectModel.PaymentsDonePage;
 import karthikakkasaligar.PageObjectModel.ProductsPage;
@@ -71,6 +72,9 @@ public class TC_13 extends BaseTest {
 		homepage.Header.scrolldown();
 		PaymentsDonePage PaymentsDone =  payments.getcardetails("karthik", "123456789", "123", "jan", "1997");
 		Assert.assertEquals(PaymentsDone.orderplacedconfirmation(), "ORDER PLACED!");
+		
+		DeletionConfirmationPage deletionconfirmationPage = homepage.Header.deleaccountcta();
+		deletionconfirmationPage.Deleteconfirmation();
 
 	}
 
