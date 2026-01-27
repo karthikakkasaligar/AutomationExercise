@@ -43,7 +43,7 @@ public class TC_13 extends BaseTest {
 		SignUPorLoginPage signuporloginpage = new SignUPorLoginPage(driver, wait);
 		signuporloginpage.SignUp("Karthik", "karthik" + System.currentTimeMillis() + "@yopmail.com");
 
-		//
+		//account information while creating account
 		InformationPage informationpage = new InformationPage(driver, wait);
 		AccountCreationConfirmationPage accountcreationconfirmationpage = informationpage.informationinfo("Test@123",
 				"Karthik", "Akkasaligar", "Product Based company", "#78, Beverly hills", "Karnataka", "Hubli", "969658",
@@ -73,6 +73,7 @@ public class TC_13 extends BaseTest {
 		PaymentsDonePage PaymentsDone =  payments.getcardetails("karthik", "123456789", "123", "jan", "1997");
 		Assert.assertEquals(PaymentsDone.orderplacedconfirmation(), "ORDER PLACED!");
 		
+		// account deletion and deletion confirmation
 		DeletionConfirmationPage deletionconfirmationPage = homepage.Header.deleaccountcta();
 		deletionconfirmationPage.Deleteconfirmation();
 
