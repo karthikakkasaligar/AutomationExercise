@@ -1,6 +1,7 @@
 package karthikakkasaligar.PageObjectModel;
 
 import org.jspecify.annotations.Nullable;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -45,5 +46,32 @@ public class HomePage extends ReUseableComponentsPage {
 		ProductsDetailsPage productsdetailspage=new ProductsDetailsPage(driver, wait);
 		return productsdetailspage;
 	}
+	
+
+	@FindBy(css="[href='#Women']")
+	WebElement WomenCTA;
+	
+	@FindBy(css="[href='#Men']")
+	WebElement MenCTA;
+	
+	@FindBy(css="[href='/category_products/7']")
+	WebElement WomenCategoryCTA;
+	
+	@FindBy(css="[href='/category_products/6']")
+	WebElement menCategoryCTA;
+	
+	public void Womencategory() {
+		WomenCTA.click();
+		WomenCategoryCTA.click();
+	}
+	
+	public void Mencategory() {
+		MenCTA.click();
+		menCategoryCTA.click();
+	}
+	
+	
+	
+	
 
 }
