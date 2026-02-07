@@ -180,7 +180,7 @@ public class ReUseableComponentsPage {
 	
 	public void scrolldown() {
 		JavascriptExecutor js =(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,300);");
+		js.executeScript("window.scrollBy(0,800);");
 	}
 
 }

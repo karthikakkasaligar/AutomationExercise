@@ -18,6 +18,7 @@
       <class name="karthikakkasaligar.Test.TC_13"/>
       <class name="karthikakkasaligar.Test.TC_14"/>
       <class name="karthikakkasaligar.Test.TC_18"/>
+      <class name="karthikakkasaligar.Test.TC_19"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

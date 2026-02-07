@@ -100,6 +100,28 @@ public class ProductsPage extends ReUseableComponentsPage {
 	   return cartpage;
    }
    
+   public void scrolldown1() {
+		JavascriptExecutor js =(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,700);");
+	}
+   
+   
+   @FindBy(css="[href='/brand_products/H&M']")
+   WebElement HnM;
+   
+   @FindBy(css="[href='/brand_products/Biba']")
+   WebElement Biba;
+   
+   public void FirstBrandverification() {
+	   HnM.click(); 
+   }
+   
+   public void SecondBrandverification() {
+	   Biba.click(); 
+   }
+   
+   
+   
   
    
    
