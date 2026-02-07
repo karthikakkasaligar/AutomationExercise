@@ -71,5 +71,15 @@ public class CartPage extends ReUseableComponentsPage {
 		   cartcheckout.click();
 	   }
 	
+	   //driver.findElements(By.cssSelector("[class='cart_quantity_delete']")).get(0).click();
+	   @FindBy(css="[class='cart_quantity_delete']")
+	   List<WebElement> cartquantity;
+	   
+	   By productid=By.id("product-1");
+	   
+	   public void removeproductfromcart() {
+		   cartquantity.get(0).click();
+		   waituntilinvisibilityOfElementLocated(productid);
+	   }
 
 }

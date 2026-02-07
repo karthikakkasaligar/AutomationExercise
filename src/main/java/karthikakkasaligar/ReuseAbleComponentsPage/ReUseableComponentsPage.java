@@ -67,6 +67,12 @@ public class ReUseableComponentsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
 	}
 	
+	public void waituntilinvisibilityOfElementLocated(By findby )
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(findby));
+	}
+	
 	@FindBy(xpath=("//*[text()=' Logged in as ']"))
 			WebElement Loggedin;
 	
