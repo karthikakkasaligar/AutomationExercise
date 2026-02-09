@@ -1,7 +1,5 @@
 package karthikakkasaligar.PageObjectModel;
 
-import org.jspecify.annotations.Nullable;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -68,6 +66,10 @@ public class HomePage extends ReUseableComponentsPage {
 	public void Mencategory() {
 		MenCTA.click();
 		menCategoryCTA.click();
+	}
+	
+	public void redirecttoproductspage() {
+		driver.get("https://automationexercise.com/products");
 	}
 	
 	
