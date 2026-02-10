@@ -26,6 +26,7 @@ public class ProductsPage extends ReUseableComponentsPage {
 		super(driver, wait);
 		this.driver = driver;
 		this.action = new Actions(driver);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		PageFactory.initElements(driver, this);
 	}
