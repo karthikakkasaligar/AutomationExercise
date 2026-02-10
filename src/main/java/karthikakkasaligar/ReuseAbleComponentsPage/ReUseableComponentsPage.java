@@ -69,8 +69,18 @@ public class ReUseableComponentsPage {
 	
 	public void waituntilinvisibilityOfElementLocated(By findby )
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(findby));
+	}
+	
+	public void waitforvisibilityOfElement(By findby ) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
+	}
+	
+	public void waitforelementtobeclickable(By findby) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(findby));
 	}
 	
 	@FindBy(xpath=("//*[text()=' Logged in as ']"))
@@ -172,9 +182,11 @@ public class ReUseableComponentsPage {
 	@FindBy(css="[href='/view_cart']")
 	WebElement headercarticon;
 	
-	public void clickheadercarticon()
+	public CartPage clickheadercarticon()
 	{
 		headercarticon.click();
+		CartPage cart=new CartPage(driver, wait);
+		return cart;
 		
 	}
 	

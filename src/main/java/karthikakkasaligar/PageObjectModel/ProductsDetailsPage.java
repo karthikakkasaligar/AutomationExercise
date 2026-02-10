@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import karthikakkasaligar.ReuseAbleComponentsPage.ReUseableComponentsPage;
 
@@ -84,6 +86,8 @@ public class ProductsDetailsPage extends ReUseableComponentsPage{
 	@FindBy(xpath="(//a[@href='/view_cart'])[2]")
 	WebElement viewcart;
 	
+
+	
 	public CartPage changequantity(String Quantity) {
 		qantity.clear();
 		qantity.sendKeys(Quantity);
@@ -92,6 +96,18 @@ public class ProductsDetailsPage extends ReUseableComponentsPage{
 		CartPage cartpage = new CartPage(driver, wait);
 		return cartpage;
 	}
+	
+	
+	
+//	driver.findElement(By.id("search_product")).sendKeys("T-Shirt");
+//	driver.findElement(By.id("submit_search")).click();
+//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='title text-center']")));
+//	Assert.assertEquals(driver.findElement(By.cssSelector("[class='title text-center']")).getText(),"SEARCHED PRODUCTS");
+	
+	
+	
+	
 	
 	
 }
