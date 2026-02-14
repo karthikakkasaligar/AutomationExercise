@@ -52,8 +52,7 @@ public class TC_02 extends BaseTest {
 		
 	}
 	
-	
-	
+
 	@Test(dependsOnMethods = "createnewaccount")
 	public void LoginUserwithcorrectemailandpassword() {
 

@@ -1,6 +1,7 @@
 package karthikakkasaligar.Test;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -37,17 +38,17 @@ public class TC_01 extends BaseTest {
 
 	
 	@Test(dataProvider = "getdata")
-	public void UserSignUp(String name, String email) throws IOException
+	public void UserSignUp(HashMap<String, String> input) throws IOException
 	{
 		// Login/SignUpPage
 		SignUPorLoginPage signuporloginpage = homepage.Header.SignUporLogin();
 		String usersignuptext = signuporloginpage.GetSignuptext();
 		Assert.assertEquals("New User Signup!", usersignuptext);
-		InformationPage informationpage = signuporloginpage.SignUp(name,email);
+		InformationPage informationpage = signuporloginpage.SignUp(input.get("name"),input.get("email"));
 				
 		// Information Page
 		String accountinfotext = informationpage.getaccountinfotext();
-		Assert.assertTrue(accountinfotext.equalsIgnoreCase("Enter Account Information"),"Account information Text is Mismatched");
+		Assert.assertTrue(accountinfotext.equalsIgnoreCase("Enter Account Information"),"Account info mimatched");
 		AccountCreationConfirmationPage accountcreationconfirmationpage = informationpage.informationinfo("Test@123","Karthik", "Akkasaligar", "Product Based company", "#78, Beverly hills", "Karnataka", "Hubli", "969658","9590188891");
 				
 		// Account Creation Page
@@ -65,7 +66,10 @@ public class TC_01 extends BaseTest {
 	@DataProvider
 	public Object[][] getdata()
 	{	
-		return new Object[][] {{"Karthik","karthik"+System.currentTimeMillis() +"@yopmail.com"}};
+		HashMap<String, String> map=new HashMap<String, String>();
+		map.put("name", "Karthik");
+		map.put("email", "karthik"+System.currentTimeMillis() +"@yopmail.com");
+		return new Object[][] {{map}};
 	}
 	
 
