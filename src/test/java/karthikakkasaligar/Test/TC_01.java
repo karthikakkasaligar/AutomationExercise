@@ -2,6 +2,7 @@ package karthikakkasaligar.Test;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -12,6 +13,7 @@ import karthikakkasaligar.PageObjectModel.DeletionConfirmationPage;
 import karthikakkasaligar.PageObjectModel.InformationPage;
 import karthikakkasaligar.PageObjectModel.SignUPorLoginPage;
 import karthikakkasaligar.TestComponents.BaseTest;
+import karthikakkasaligar.data.datareader;
 
 //TEST CASE 1 : User Signup
 
@@ -64,12 +66,17 @@ public class TC_01 extends BaseTest {
 	}
 	
 	@DataProvider
-	public Object[][] getdata()
+	public Object[][] getdata() throws IOException
 	{	
+		
+//		 datareader Data= new datareader();
+//		 List<HashMap<String, String>>data=  Data.getjsondata(System.getProperty("user.dir")+"\\src\\test\\java\\karthikakkasaligar\\data\\TC_01.json");
+//		 return new Object[][] {{data.get(0)}};
 		HashMap<String, String> map=new HashMap<String, String>();
 		map.put("name", "Karthik");
 		map.put("email", "karthik"+System.currentTimeMillis() +"@yopmail.com");
 		return new Object[][] {{map}};
+		
 	}
 	
 

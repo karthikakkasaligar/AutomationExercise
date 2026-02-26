@@ -23,11 +23,9 @@ public class TC_03 extends BaseTest{
 	@DataProvider
 	public Object[][] getdata()
 	{
-	
 		HashMap<String, String>map=new HashMap<String, String>();
 		map.put("email", "Test12332@gmail.com");
 		map.put("password", "karthik123");
-		
 		return	new Object[][] {{map}};
 	}
 }
